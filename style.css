@@ -1,0 +1,146 @@
+
+body {overflow-x: hidden;
+    height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+    position: relative; /* Set the position context */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white overlay */;}
+
+    body::before {
+      content: ""; /* Required for a pseudo-element */
+      position: absolute; /* Positions the pseudo-element */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('IMG_0678.jpg'); /* Path to your background image */
+      background-size: cover; /* Cover the whole body */
+      background-position: center; /* Center the background image */
+      background-attachment: fixed;
+      opacity: 0.1; /* Adjust for desired transparency, keep it low for barely visible */
+      z-index: -2; /* Ensures the image stays behind other content */
+  }
+
+#main{width: 100vw;
+    height: 100vh;}
+#hamburger-menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+a{text-decoration: none; color: black;}
+  
+  #hamburger-menu span {
+    display: block;
+    width: 30px; /* Width of the hamburger lines */
+    height: 3px; /* Height of the hamburger lines */
+    background-color: #333; /* Color of the hamburger lines */
+    margin: 6px 0; /* Spacing between the lines */
+    transition: 0.4s;
+  }
+
+  #header {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #headText {margin: 0; font-size: 30px;}
+
+  #transcriptPart{
+    color: #FF7F50;
+  }
+
+  #profile-icon {
+   width: 45px;
+  }
+
+  #links{display: none;}
+
+  #overlaySelections{
+    display: none;
+    width: 50%;
+    height: 100%;
+    background-color: #FF7F50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+
+  .selections {border-top: solid black 2px; padding-top: 12px; padding-left: 10px; margin: 0; margin-top: 10px; cursor: pointer;}
+
+  #close{width: 100%; display: flex; justify-content: flex-end; }
+
+  #X{margin: 0; margin-right: 10px; margin-top: 10px; font-size: 35px; cursor: pointer;}
+
+  .quote-container {
+    max-width: 400px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Keeps the background in tune with the mostly white theme */
+    border-left: 5px solid #FF7F50; /* Coral orange border for a pop of color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  .quote {
+    font-family: 'Arial', sans-serif; /* Choose a font that fits your design */
+    font-size: 18px; /* Adjust size as needed */
+    color: #333; /* Dark text for contrast */
+    text-align: center; /* Center the quote for emphasis */
+    line-height: 1.5; /* Improve readability */
+  }
+
+  .mainHeaders{color:#708090; text-align: center; margin: 0; margin-top: 60px; width: 375px;}
+
+  #quoteHeaderContainer {width: fit-content; margin-left: auto; margin-right: auto; margin-top: 60px;}
+
+/*Sign In Page */
+.accountBox{border: 1px solid black; padding: 8px; width: fit-content; margin-left: auto; margin-right: auto; margin-top: 80px; background-color: white;}
+
+.inputBoxes{width: 300px; height: 25px;}
+
+.accountBtn{background-color: orange; padding: 8px; font-size: 20px; cursor: pointer;}
+
+#logInBtnDiv{display: flex; justify-content: center; width: 100%; margin-top: 30px;}
+
+#noAccountDiv {
+    display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 30px;
+}
+
+#createAccount {font-size: 20px; color: orange; margin: 0; cursor: pointer;}
+
+#logInText {font-size: 20px; color: orange; margin: 0; cursor: pointer;}
+
+#createAccount:hover{border-bottom: solid 1px rgb(36, 36, 36);}
+
+#noAccount {margin: 0;}
+
+#createAccountBox{display: none;}
+
+/*Transcription Page*/
+.transcriptionHeader {font-size: 40px; margin-bottom: 10px; text-align: center; color:#708090;}
+.transcription {width: fit-content; display: flex; flex-direction: column; cursor: pointer;}
+.transcriptionImage {width: 100%; display: block;  filter: brightness(0.2);}
+.transcriptionImgDiv{width: 300px; border: 3px solid rgb(241, 108, 7);; border-bottom: none; position: relative;}
+.buyNow {background-color: rgb(241, 108, 7); font-size: 25px; color: white; width: 100%; cursor: pointer;  padding: 5px;
+border-color:rgb(241, 108, 7);
+border-top: none;
+border-right: none;}
+.transcriptionBoxes {width: 100vw; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 20px; padding-bottom: 100px; vertical-align: top;}
+#test{width: fit-content; height: fit-content;}
+.price{position: absolute; top: 10px; left: 10px; color: white; font-size: 40px; margin: 0;}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+
+  /*Header*/
+  #hamburger-menu {display: none;}
+  #links{font-size: 12.5px; display: flex; gap: 25px;}
+  #profile-icon {display: none;}
+  .selections {border-top: none; padding-top: 0; padding-left: 0; margin: 0; margin-top: 0; cursor: pointer;}
+  a:hover{color: #FF7F50;}
+  .transcriptionBoxes {display: flex; flex-direction: row; gap: 140px; padding-bottom: 0; margin-top: 60px;}
+  .mainHeaders{margin: 0; margin-top: 60px; width: 400px; font-size: 35px;}
+  #quoteHeaderCotainer {margin-top: 60px;}
+  .quote-container{max-width: 800px;}
+
+  
+}
